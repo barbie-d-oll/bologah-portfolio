@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Container from "../common/Container";
 
@@ -10,8 +13,29 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-md">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
+        scrolled
+          ? "border-white/10 bg-[#0F172A] shadow-md"
+          : "border-gray-200 bg-[#FAFAF8] shadow-sm"
+      }`}
+    >
       <Container>
         <nav className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -20,16 +44,27 @@ export default function Navbar() {
             className="text-2xl font-bold tracking-wide"
           >
             <span className="text-[#D9A404]">BO</span>
-            <span className="text-[#1E5AA8]">LOGAH</span>
+
+            <span
+              className={
+                scrolled ? "text-[#F3F4F6]" : "text-[#1F2937]"
+              }
+            >
+              LOGAH
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Navigation */}
           <ul className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="text-sm font-medium text-gray-600 transition-colors hover:text-[#1E5AA8]"
+                  className={`text-sm font-medium transition-colors ${
+                    scrolled
+                      ? "text-[#F3F4F6] hover:text-[#D9A404]"
+                      : "text-[#1F2937] hover:text-[#1E5AA8]"
+                  }`}
                 >
                   {link.name}
                 </a>
@@ -37,12 +72,16 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Resume Button */}
+          {/* Resume */}
           <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-lg border border-[#1E5AA8] px-4 py-2 text-sm font-medium text-[#1E5AA8] transition-colors hover:bg-[#1E5AA8] hover:text-white md:inline-flex"
+            className={`hidden rounded-lg border px-5 py-2.5 text-sm font-medium transition md:inline-flex ${
+              scrolled
+                ? "border-[#F3F4F6] text-[#F3F4F6] hover:bg-[#F3F4F6] hover:text-[#0F172A]"
+                : "border-[#1E5AA8] text-[#1E5AA8] hover:bg-[#1E5AA8] hover:text-white"
+            }`}
           >
             Resume
           </a>

@@ -10,7 +10,7 @@ const geist = Geist({
 export const metadata: Metadata = {
   title: "Barbara Omaira Logah | Frontend Developer",
   description:
-    "Portfolio of Barbara Omaira Logah, Frontend Developer and Computer Engineering graduate.",
+    "Barbara Omaira Logah is a Computer Engineering graduate and frontend developer building web applications with React, Next.js, and TypeScript.",
 };
 
 export default function RootLayout({
