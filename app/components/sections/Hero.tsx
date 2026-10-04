@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Container from "../common/Container";
+import Container from "<div styleName={} />
+<components></components>/common/Container":
 
 export default function Hero() {
   return (
