@@ -85,6 +85,17 @@ export default function Navbar() {
           >
             Resume
           </a>
+
+          <a
+  href="/cv.docx"
+  download
+  className={`hidden rounded-lg border px-5 py-2.5 text-sm font-medium transition md:inline-flex ${
+    scrolled
+      ? "border-[#F3F4F6] text-[#F3F4F6] hover:bg-[#F3F4F6] hover:text-[#0F172A]"
+      : "border-[#1E5AA8] text-[#1E5AA8] hover:bg-[#1E5AA8] hover:text-white"
+  }`}
+>Download CV
+</a>
         </nav>
       </Container>
     </header>

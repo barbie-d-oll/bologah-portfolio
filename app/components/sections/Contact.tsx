@@ -47,7 +47,7 @@ export default function Contact() {
               </p>
 
               <p className="text-base text-gray-200">
-                +233 544 760 528
+                +233 544 760 528 
               </p>
             </a>
           </div>

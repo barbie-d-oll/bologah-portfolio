@@ -4,6 +4,7 @@ import Container from "../common/Container";
 export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#0F172A]">
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#172554]" />
 
       <Container className="relative z-10 flex min-h-screen items-center py-28 lg:py-32">
@@ -20,15 +21,19 @@ export default function Hero() {
               Omaira Logah
             </h1>
 
-            <h2 className="mb-6 text-xl font-medium text-gray-200 md:text-2xl">
-             I am a Computer Engineering graduate and full stack developer focused on building practical web applications from the interface through to the backend.
+            <h2 className="mb-6 text-xl font-medium leading-8 text-gray-200 md:text-2xl">
+              Computer Engineering Graduate
             </h2>
 
             <p className="mb-9 max-w-xl text-base leading-8 text-gray-300 md:text-lg">
-              I build web applications across the frontend and backend, working with React, Next.js, TypeScript, APIs, Node.js databases, and Firebase.
+              I build web applications across the frontend and backend,
+              working with React, Next.js, TypeScript, APIs, Node.js,
+              databases, and Firebase.
             </p>
 
+            {/* Actions */}
             <div className="flex flex-wrap items-center gap-4">
+              {/* View Projects */}
               <a
                 href="#projects"
                 className="inline-flex min-h-[48px] items-center justify-center rounded-lg bg-[#1E5AA8] px-7 py-3.5 font-medium text-white transition hover:bg-[#184B8C]"
@@ -36,11 +41,11 @@ export default function Hero() {
                 View Projects
               </a>
 
+              {/* Download Resume */}
               <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-lg border border-white bg-transparent px-7 py-3.5 font-medium text-white transition hover:bg-white hover:text-[#0F172A]"
+                href="/resume.docx"
+                download
+                className="inline-flex min-h-[48px] items-center justify-center rounded-lg border border-white px-7 py-3.5 font-medium text-white transition hover:bg-white hover:text-[#0F172A]"
               >
                 Download Resume
               </a>
