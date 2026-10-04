@@ -13,7 +13,7 @@ export default function Contact() {
           </p>
 
           <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
-            Let's work together.
+            Let &apos;s work together.
           </h2>
 
           <p className="mb-10 max-w-2xl text-lg leading-8 text-gray-300">
