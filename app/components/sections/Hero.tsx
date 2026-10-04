@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Container from "<div styleName={} />
-<components></components>/common/Container":
+import Container from "../common/Container";
 
 export default function Hero() {
   return (
@@ -9,11 +8,10 @@ export default function Hero() {
 
       <Container className="relative z-10 flex min-h-screen items-center py-28 lg:py-32">
         <div className="grid w-full items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-
           {/* Content */}
           <div className="max-w-2xl text-white">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-[#D9A404]">
-              Frontend Developer
+              Full Stack Developer
             </p>
 
             <h1 className="mb-6 text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
@@ -23,19 +21,17 @@ export default function Hero() {
             </h1>
 
             <h2 className="mb-6 text-xl font-medium text-gray-200 md:text-2xl">
-              Computer Engineering Graduate
+             I am a Computer Engineering graduate and full stack developer focused on building practical web applications from the interface through to the backend.
             </h2>
 
             <p className="mb-9 max-w-xl text-base leading-8 text-gray-300 md:text-lg">
-              I build web applications with React and Next.js, with a
-              focus on clean interfaces, responsive design, and reliable
-              functionality.
+              I build web applications across the frontend and backend, working with React, Next.js, TypeScript, APIs, Node.js databases, and Firebase.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center rounded-lg bg-[#1E5AA8] px-7 py-3.5 font-medium text-white transition hover:bg-[#184B8C]"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-lg bg-[#1E5AA8] px-7 py-3.5 font-medium text-white transition hover:bg-[#184B8C]"
               >
                 View Projects
               </a>
@@ -44,7 +40,7 @@ export default function Hero() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-white bg-transparent px-7 py-3.5 font-medium text-white transition hover:bg-white hover:text-[#0F172A]"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-lg border border-white bg-transparent px-7 py-3.5 font-medium text-white transition hover:bg-white hover:text-[#0F172A]"
               >
                 Download Resume
               </a>
@@ -64,7 +60,6 @@ export default function Hero() {
               />
             </div>
           </div>
-
         </div>
       </Container>
     </section>

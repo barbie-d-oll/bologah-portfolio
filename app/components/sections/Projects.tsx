@@ -52,7 +52,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <article
               key={project.title}
