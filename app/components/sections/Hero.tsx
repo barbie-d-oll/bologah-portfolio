@@ -44,7 +44,7 @@ export default function Hero() {
               {/* Download Resume */}
               <a
                 href="/resume.pdf"
-                download
+                download="Barbara-Omaira-Logah-Resume.pdf"
                 className="inline-flex min-h-[48px] items-center justify-center rounded-lg border border-white px-7 py-3.5 font-medium text-white transition hover:bg-white hover:text-[#0F172A]"
               >
                 Download Resume

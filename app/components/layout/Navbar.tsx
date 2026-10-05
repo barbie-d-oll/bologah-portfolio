@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Container from "../common/Container";
 
@@ -13,29 +10,8 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
-        scrolled
-          ? "border-white/10 bg-[#0F172A] shadow-md"
-          : "border-gray-200 bg-[#FAFAF8] shadow-sm"
-      }`}
-    >
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm">
       <Container>
         <nav className="flex h-20 items-center justify-between">
           {/* Logo */}
@@ -44,14 +20,7 @@ export default function Navbar() {
             className="text-2xl font-bold tracking-wide"
           >
             <span className="text-[#D9A404]">BO</span>
-
-            <span
-              className={
-                scrolled ? "text-[#F3F4F6]" : "text-[#1F2937]"
-              }
-            >
-              LOGAH
-            </span>
+            <span className="text-[#1F2937]">LOGAH</span>
           </Link>
 
           {/* Navigation */}
@@ -60,11 +29,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className={`text-sm font-medium transition-colors ${
-                    scrolled
-                      ? "text-[#F3F4F6] hover:text-[#D9A404]"
-                      : "text-[#1F2937] hover:text-[#1E5AA8]"
-                  }`}
+                  className="text-sm font-medium text-[#1F2937] transition-colors hover:text-[#1E5AA8]"
                 >
                   {link.name}
                 </a>
@@ -72,17 +37,14 @@ export default function Navbar() {
             ))}
           </ul>
 
+          {/* Download CV */}
           <a
-  href="/cv.docx"
-  download
-  className={`hidden rounded-lg border px-5 py-2.5 text-sm font-medium transition md:inline-flex ${
-    scrolled
-      ? "border-[#1E5AA8] text-[#1E5AA8] hover:bg-[#1E5AA8] hover:text-white"
-      : "border-white text-white hover:bg-white hover:text-[#0F172A]"
-  }`}
->
-  Download CV
-</a>
+            href="/cv.docx"
+            download="Barbara-Omaira-Logah-CV.docx"
+            className="hidden items-center justify-center rounded-lg border border-[#1E5AA8] bg-[#1E5AA8] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#184B8C] md:inline-flex"
+          >
+            Download CV
+          </a>
         </nav>
       </Container>
     </header>
