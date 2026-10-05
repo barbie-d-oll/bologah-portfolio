@@ -32,7 +32,7 @@ export default function Hero() {
             </p>
 
             {/* Actions */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="relative z-20 flex flex-wrap items-center gap-4">
               {/* View Projects */}
               <a
                 href="#projects"
